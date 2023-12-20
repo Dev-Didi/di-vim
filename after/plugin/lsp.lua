@@ -20,3 +20,15 @@ require('mason-lspconfig').setup({
 })
 lsp.setup()
 
+
+local cmp = require('cmp')
+
+cmp.setup({
+  mapping = cmp.mapping.preset.insert({
+      ['<Tab>'] = cmp.mapping.confirm({select = true}),
+  }),
+  preselect = 'item',
+  completion = {
+    completeopt = 'menu,menuone,noinsert'
+  },
+})
